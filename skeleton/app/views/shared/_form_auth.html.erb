@@ -1,0 +1,21 @@
+<%
+if type == :sign_in
+  method_url = session_url
+  submit_value = "Log Meow In!"
+elsif type == :sign_up
+  method_url = users_url
+  submit_value = "Sign Meow Up!"
+end
+%>
+
+<form action="<%= method_url %>" method="post">
+  <label>Username:
+    <input type="text" name="session[user_name]" value="">
+  </label>
+  <br>
+  <label>Password:
+    <input type="password" name="session[password]" value="">
+  </label>
+  <br>
+  <input type="submit" value="<%= submit_value %>">
+</form>
